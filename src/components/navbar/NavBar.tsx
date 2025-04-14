@@ -10,32 +10,20 @@ import {
   MobileNavToggle,
   MobileNavMenu,
 } from "@/components/ui/resizable-navbar";
+import { navItems } from "@/lib/navbar.constant";
 import { IconBrandGithub } from "@tabler/icons-react";
 
 import { useState } from "react";
 
-export function NavbarDemo() {
-  const navItems = [
-    {
-      name: "About",
-      link: "/about",
-    },
-    {
-      name: "skills",
-      link: "/skills",
-    },
-    {
-      name: "Projects",
-      link: "/projects",
-    },
-  ];
+export function NavbarComponent() {
+
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
 
       <Navbar className=" ">
-        {/* Desktop Navigation */}
+        {/* Desktop */}
         <NavBody>
           <NavbarLogo />
           <NavItems items={navItems} />
@@ -45,7 +33,7 @@ export function NavbarDemo() {
           </div>
         </NavBody>
 
-        {/* Mobile Navigation */}
+        {/* Mobile  */}
         <MobileNav>
           <MobileNavHeader>
             <NavbarLogo />
@@ -75,14 +63,14 @@ export function NavbarDemo() {
                 variant="primary"
                 className="w-full"
               >
-                Login
+            <IconBrandGithub /> Github
               </NavbarButton>
               <NavbarButton
                 onClick={() => setIsMobileMenuOpen(false)}
                 variant="primary"
                 className="w-full"
               >
-                Book a call
+           Book a appointment
               </NavbarButton>
             </div>
           </MobileNavMenu>

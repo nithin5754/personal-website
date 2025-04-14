@@ -109,7 +109,7 @@ export const ProjectsData: ProjectsType[] = [
 
   {
     id: 3,
-    name: "Project Management Tool Website",
+    name: "Project Management  Website",
     description: "using html tailwindcss javascript we creating apple.in clone",
     created_at: "2023-05-13T10:42:32Z",
     live_url: "https://jobber-client.vercel.app/",

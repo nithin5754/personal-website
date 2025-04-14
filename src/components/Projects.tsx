@@ -25,17 +25,7 @@ export interface GitHubRepo {
 
 
 const Projects = () => {
-  // const [repos, setRepos] = useState<GitHubRepo[]>([]);
 
-  // useEffect(() => {
-  //   // getALL()
-
-  //   fetch("https://api.github.com/users/Nithin5754/repos")
-  //     .then((res) => res.json())
-  //     .then((data) => setRepos(data))
-  //     .catch((err) => console.error(err));
-      
-  // }, []);
   return (
     <section id="projects" className="bg-default-50/50 py-8">
       <Container>
@@ -55,7 +45,7 @@ const Projects = () => {
         >
           <Heading className="text-primary">Projects</Heading>
 
-          <section className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
+          <section className="grid grid-cols-1 gap-3 md:grid-cols-2 xl:grid-cols-4">
             {ProjectsData &&
               ProjectsData.map((project:ProjectsType) => (
                 <Fragment key={project.id}>

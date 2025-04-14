@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { NavbarDemo } from "@/components/navbar/NavBar";
+import { NavbarComponent } from "@/components/navbar/NavBar";
 import { ThemeProvider } from "@/components/theme-provider";
 
 const geistSans = Geist({
@@ -37,7 +37,7 @@ export default function RootLayout({
             >
              <main  className=" min-h-screen bg-gradient-to-tr from-[#100730] from-0% via-black via-30% to-[#100730] to-100% text-foreground dark">
 
-                  <NavbarDemo/>
+                  <NavbarComponent/>
         
                   {children}
 

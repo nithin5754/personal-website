@@ -1,5 +1,3 @@
-
-
 import clsx from "clsx";
 
 const tabButtonClass = (isActive: boolean) =>
@@ -10,6 +8,4 @@ const tabButtonClass = (isActive: boolean) =>
       : "border border-input bg-background text-foreground hover:bg-accent hover:text-accent-foreground"
   );
 
-
-
-  export default tabButtonClass
+export default tabButtonClass;
