@@ -27,7 +27,7 @@ const page = () => {
           </div>
         </div>
 
-        <section className=" flex flex-wrap justify-between  m-auto gap-4 h-fit w-full">
+        <section className=" flex flex-wrap justify-center mx-auto gap-4 h-fit w-full">
           {projects &&
             projects.map((project: ProjectsType) => (
               <Fragment key={project.id}>
