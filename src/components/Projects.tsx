@@ -6,7 +6,6 @@ import { defaultAnimation } from "@/lib/animations";
 
 import { Fragment } from "react";
 
-
 import { ProjectsData, ProjectsType } from "@/hello";
 import Card from "./Card";
 
@@ -14,7 +13,7 @@ export interface GitHubRepo {
   id: number;
   name: string;
   html_url: string;
-  description: string|null;
+  description: string | null;
   language: string;
   created_at: string;
   updated_at: string;
@@ -23,9 +22,7 @@ export interface GitHubRepo {
   [key: string]: any;
 }
 
-
 const Projects = () => {
-
   return (
     <section id="projects" className="bg-default-50/50 py-8">
       <Container>
@@ -47,7 +44,7 @@ const Projects = () => {
 
           <section className="grid grid-cols-1 gap-3 md:grid-cols-2 xl:grid-cols-4">
             {ProjectsData &&
-              ProjectsData.map((project:ProjectsType) => (
+              ProjectsData.map((project: ProjectsType) => (
                 <Fragment key={project.id}>
                   <motion.div
                     variants={defaultAnimation}
@@ -59,8 +56,7 @@ const Projects = () => {
                     }}
                     whileHover="hover"
                   >
-                    <Card data={project}  />
-
+                    <Card data={project} />
                   </motion.div>
                 </Fragment>
               ))}
