@@ -45,8 +45,8 @@ function Hero() {
               }}
               className="truncate"
             >
-              Self-Taught Graphic Designer <br />
-              Turned Self-Taught Web Developer
+               MERN Full Stack Developer - dedicated to turning complex<br />
+               challenges into elegant front-end and back-end solutions
             </motion.p>
           </div>
           <div className="hidden md:block">
@@ -71,11 +71,11 @@ function Hero() {
             <motion.p
               initial={{
                 opacity: 0,
-                fontSize: "4rem",
+                fontSize: "8rem",
               }}
               animate={{
                 originY: 0,
-                fontSize: "1.5rem",
+                fontSize: "2rem",
                 opacity: [1, 1],
               }}
               transition={{
@@ -84,7 +84,9 @@ function Hero() {
               }}
               className="truncate"
             >
-              Full Stack Developer <br />
+          
+              MERN Full Stack Developer - dedicated to turning complex<br />
+              challenges into elegant front-end and back-end solutions
             </motion.p>
           </div>
           <div className="my-4"></div>

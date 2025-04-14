@@ -58,13 +58,20 @@ export function NavbarComponent() {
               </a>
             ))}
             <div className="flex w-full flex-col gap-4">
+            <a 
+                  target="_blank"
+  rel="noopener noreferrer"
+                href="https://github.com/nithin5754?tab=repositories">
               <NavbarButton
                 onClick={() => setIsMobileMenuOpen(false)}
                 variant="primary"
                 className="w-full"
               >
-            <IconBrandGithub /> Github
+     
+                <IconBrandGithub /> Github
+
               </NavbarButton>
+                </a>
               <NavbarButton
                 onClick={() => setIsMobileMenuOpen(false)}
                 variant="primary"

@@ -15,8 +15,12 @@ export default function Skills() {
   );
 
   useEffect(() => {
+   if(type===SkillType.ALL){
+    setSkillsToShow(allSkills);
+   }else{
     const filtered = allSkills.filter((skill) => skill.type === type);
     setSkillsToShow(filtered);
+   }
   }, [type]);
 
   return (
