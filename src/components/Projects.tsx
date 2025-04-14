@@ -42,7 +42,7 @@ const Projects = () => {
         >
           <Heading className="text-primary">Projects</Heading>
 
-          <section className="grid grid-cols-1 gap-3 md:grid-cols-2 xl:grid-cols-4">
+          <section className="  grid grid-cols-1 gap-3 md:grid-cols-2 xl:grid-cols-4 ">
             {ProjectsData &&
               ProjectsData.map((project: ProjectsType) => (
                 <Fragment key={project.id}>

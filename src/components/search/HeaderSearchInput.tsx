@@ -3,14 +3,38 @@ import { ChangeEvent, FC, FormEvent, ReactElement, useState } from "react";
 import { Button } from "../ui/button";
 import { SearchIcon } from "lucide-react";
 import { Input } from "../ui/input";
+import { ProjectsData, ProjectsType } from "@/hello";
 
-const HeaderSearchInput: FC = (): ReactElement => {
+const HeaderSearchInput: FC<{
+  handleProjects: (data: ProjectsType[]) => void;
+}> = ({ handleProjects }): ReactElement => {
   const [searchItem, setSearchItem] = useState<string>("");
 
   const navigateSearchPage = (): void => {
-    if (searchItem.trim()) {
- 
-      console.log("Searching for:", searchItem);
+    try {
+      const search = searchItem.trim().toLowerCase();
+      if (search) {
+        const filteredProject = ProjectsData.filter((project) => {
+          return (
+            project.name.toLowerCase().includes(search) ||
+            project.description?.toLowerCase().includes(search) ||
+            project.repositories.some(
+              (repo) =>
+                repo.name.toLowerCase().includes(search) ||
+                repo.description?.toLowerCase().includes(search)
+            )
+          );
+        });
+        if (filteredProject.length > 0) {
+          handleProjects(filteredProject);
+        } else {
+          handleProjects([]);
+        }
+      } else {
+        handleProjects(ProjectsData);
+      }
+    } finally {
+      setSearchItem("");
     }
   };
 

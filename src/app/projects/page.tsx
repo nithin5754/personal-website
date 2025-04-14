@@ -3,25 +3,33 @@ import Container from "@/components/Component";
 import Heading from "@/components/Heading";
 import { ProjectsData, ProjectsType } from "@/hello";
 import { defaultAnimation } from "@/lib/animations";
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 import { motion } from "framer-motion";
 import Card from "@/components/Card";
 import HeaderSearchInput from "@/components/search/HeaderSearchInput";
 
 const page = () => {
+  const [projects, setProjects] = useState<ProjectsType[]>(ProjectsData);
+
+  const handleProjects = (data: ProjectsType[]): void => {
+    console.log("data",data) 
+
+    setProjects(data);
+  };
+
   return (
     <section id="skills" className="py-12">
       <Container>
         <div className="flex justify-between">
           <Heading className="mb-4">Projects</Heading>
-         <div className="w-[400px]">
-         <HeaderSearchInput />
-         </div>
+          <div className="w-[400px]">
+            <HeaderSearchInput handleProjects={handleProjects} />
+          </div>
         </div>
 
         <section className=" flex flex-wrap justify-between  m-auto gap-4 h-fit w-full">
-          {ProjectsData &&
-            ProjectsData.map((project: ProjectsType) => (
+          {projects &&
+            projects.map((project: ProjectsType) => (
               <Fragment key={project.id}>
                 <motion.div
                   variants={defaultAnimation}
