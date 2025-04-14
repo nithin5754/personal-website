@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-
 import { motion } from "framer-motion";
 import Container from "./Component";
 import DownloadResume from "./DownloadResume";

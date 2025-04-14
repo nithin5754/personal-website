@@ -1,6 +1,7 @@
 "use client";
 import { ProjectsType } from "@/hello";
 import { dateConvertorFunc } from "@/lib/data.constant";
+import { IconBrandGithub } from "@tabler/icons-react";
 import Image from "next/image";
 import { FC } from "react";
 
@@ -26,12 +27,38 @@ const Card: FC<{ data: ProjectsType }> = ({ data }) => {
           <h2 className="my-4 text-sm font-normal text-neutral-600 dark:text-neutral-400">
             {data.description}
           </h2>
-          <div className="mt-10 flex flex-row items-center justify-between">
-            <span className="text-sm text-gray-500">
-              {dateConvertorFunc(data.created_at)}
-            </span>
-            <div className="relative z-10 block rounded-xl bg-black px-6 py-2 text-xs font-bold text-white">
-              Read More
+          <div className="mt-10 space-y-3">
+            {/* Date */}
+            <div className="text-start">
+              <span className="text-sm text-gray-500">
+                {dateConvertorFunc(data.created_at)}
+              </span>
+            </div>
+
+            <div className="flex items-center justify-center gap-3 flex-wrap">
+              {data.live_url && (
+                <>
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={data.live_url}
+                    className="cursor-pointer"
+                  >
+                    {" "}
+                    <span className="rounded-sm bg-green-600 px-4 py-1 text-xs font-semibold text-white shadow-sm">
+                      Live
+                    </span>
+                  </a>
+                </>
+              )}
+
+              <button
+                className="flex items-center gap-2 rounded-md bg-gray-900 px-4 py-2 text-xs font-semibold text-white hover:bg-gray-800 transition"
+                aria-label="View on GitHub"
+              >
+                <IconBrandGithub size={16} />
+                GitHub
+              </button>
             </div>
           </div>
         </div>
